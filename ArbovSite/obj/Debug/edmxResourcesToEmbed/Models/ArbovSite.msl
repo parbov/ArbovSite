@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ArbovSiteModelStoreContainer" CdmEntityContainer="ArbovSiteEntities">
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="ArbovSiteModel.Project">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="start" ColumnName="start" />
+          <ScalarProperty Name="finish" ColumnName="finish" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="responsibilities" ColumnName="responsibilities" />
+          <ScalarProperty Name="workplaceID" ColumnName="workplaceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workplaces">
+      <EntityTypeMapping TypeName="ArbovSiteModel.Workplace">
+        <MappingFragment StoreEntitySet="Workplaces">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="start" ColumnName="start" />
+          <ScalarProperty Name="finish" ColumnName="finish" />
+          <ScalarProperty Name="position" ColumnName="position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schools">
+      <EntityTypeMapping TypeName="ArbovSiteModel.School">
+        <MappingFragment StoreEntitySet="Schools">
+          <ScalarProperty Name="certificate" ColumnName="certificate" />
+          <ScalarProperty Name="finish" ColumnName="finish" />
+          <ScalarProperty Name="start" ColumnName="start" />
+          <ScalarProperty Name="degree" ColumnName="degree" />
+          <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+          <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ArbovSiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="start" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="finish" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="text" />
+    <Property Name="position" Type="nvarchar" MaxLength="50" />
+    <Property Name="responsibilities" Type="nvarchar" MaxLength="250" />
+    <Property Name="workplaceID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Schools">
+    <Key>
+      <PropertyRef Name="SchoolId" />
+    </Key>
+    <Property Name="SchoolId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SchoolName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="degree" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="start" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="finish" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="certificate" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Workplaces">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="company" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="start" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="finish" Type="nvarchar" MaxLength="50" />
+    <Property Name="position" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Projects_Workplaces">
+    <End Role="Workplaces" Type="Self.Workplaces" Multiplicity="1" />
+    <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workplaces">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Projects">
+        <PropertyRef Name="workplaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ArbovSiteModelStoreContainer">
+    <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Schools" EntityType="Self.Schools" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Workplaces" EntityType="Self.Workplaces" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Projects_Workplaces" Association="Self.FK_Projects_Workplaces">
+      <End Role="Workplaces" EntitySet="Workplaces" />
+      <End Role="Projects" EntitySet="Projects" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

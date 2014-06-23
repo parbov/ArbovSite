@@ -153,6 +153,8 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Admin\EditWorkplace.aspx" />
+    <Content Include="Admin\EditWorkPlaces.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -181,6 +183,7 @@
       <DependentUpon>ArbovSite.edmx</DependentUpon>
       <LastGenOutput>ArbovSite.cs</LastGenOutput>
     </Content>
+    <Content Include="Admin\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -215,6 +218,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Admin\ViewAllInCV.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -263,6 +267,20 @@
     </Compile>
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditWorkplace.aspx.cs">
+      <DependentUpon>EditWorkplace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditWorkplace.aspx.designer.cs">
+      <DependentUpon>EditWorkplace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditWorkPlaces.aspx.cs">
+      <DependentUpon>EditWorkPlaces.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditWorkPlaces.aspx.designer.cs">
+      <DependentUpon>EditWorkPlaces.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -339,6 +357,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Admin\ViewAllInCV.aspx.cs">
+      <DependentUpon>ViewAllInCV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewAllInCV.aspx.designer.cs">
+      <DependentUpon>ViewAllInCV.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
